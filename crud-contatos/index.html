@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Contatos</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="img/logo_alphacode.png" alt="Logo Alphacode" class="logo">
+    <h1>Cadastro de Contatos</h1>
+  </header>
+
+  <main>
+    <form class="formulario">
+      <div class="campo">
+        <label>Nome completo</label>
+        <input type="text" placeholder="Ex.: Letícia Pacheco dos Santos">
+      </div>
+
+      <div class="campo">
+        <label>Data de nascimento</label>
+        <input type="date">
+      </div>
+
+      <div class="campo">
+        <label>E-mail</label>
+        <input type="email" placeholder="Ex.: leticia@gmail.com">
+      </div>
+
+      <div class="campo">
+        <label>Profissão</label>
+        <input type="text" placeholder="Ex.: Desenvolvedora Web">
+      </div>
+
+      <div class="campo">
+        <label>Celular para contato</label>
+        <input type="tel" placeholder="Ex.: (11) 98493-2039">
+        <label><input type="checkbox"> Número de celular possui WhatsApp</label>
+      </div>
+
+      <div class="campo">
+        <label>Telefone para contato</label>
+        <input type="tel" placeholder="Ex.: (11) 4033-2019">
+      </div>
+
+      <div class="notificacoes">
+        <label><input type="checkbox"> Enviar notificações por SMS</label>
+        <label><input type="checkbox"> Enviar notificações por E-mail</label>
+      </div>
+
+      <button type="submit" class="btn-cadastrar">Cadastrar contato</button>
+    </form>
+
+    <section class="lista-contatos">
+      <h2>Contatos Cadastrados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Data de nascimento</th>
+            <th>Celular</th>
+            <th>E-mail</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Letícia Pacheco</td>
+            <td>03/10/2003</td>
+            <td>(11) 98493-2039</td>
+            <td>leticia@gmail.com</td>
+            <td>
+              <button><img src="img/editar.png" alt="Editar"></button>
+              <button><img src="img/excluir.png" alt="Excluir"></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <img src="img/logo_rodape_alphacode.png" alt="Logo rodapé" class="logo-rodape">
+    <p>© Copyright 2022 | Desenvolvido por Alphacode IT Solutions</p>
+  </footer>
+  <script>
+    document.querySelector(".formulario").addEventListener("submit", function(e) {
+      e.preventDefault(); 
+  
+      const nome = document.querySelector('input[placeholder*="Letícia"]').value.trim();
+      const data = document.querySelector('input[type="date"]').value;
+      const email = document.querySelector('input[type="email"]').value.trim();
+      const celular = document.querySelector('input[placeholder*="98493"]').value.trim();
+  
+      if (!nome || !data || !email || !celular) {
+        alert("Preencha os campos obrigatórios: Nome, Data, E-mail e Celular.");
+        return;
+      }
+  
+      alert(`Contato cadastrado:\n\nNome: ${nome}\nData: ${data}\nE-mail: ${email}\nCelular: ${celular}`);
+  
+      document.querySelector(".formulario").reset();
+    });
+  </script>
+  
+</body>
+</html>
