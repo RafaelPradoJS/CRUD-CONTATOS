@@ -47,5 +47,3 @@ Estou disposto a continuar o projeto e concluir a parte funcional com PHP e MySQ
 Feito com por [Rafael do Prado Dias Ferraz]
 
 
-## 📁 Estrutura do Projeto
-
